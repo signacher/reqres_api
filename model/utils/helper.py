@@ -12,7 +12,6 @@ from pathlib import Path
 
 def load_json_schema(file_name):
     schema_path = os.path.join(Path(__file__).parents[1], 'schemas', file_name)
-    print(schema_path)
     with open(schema_path) as schema:
         return json.loads(schema.read())
 

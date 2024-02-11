@@ -3,7 +3,9 @@ import pytest
 from model.utils.helper import load_json_schema, reqres_session, reqres_responce
 
 
-@pytest.mark.parametrize('name, job',[('John', 'qa-engeenier'), ('Иван', 'тестировщик')])
+@allure.label('owner', 'Telnov')
+@allure.epic('Creat')
+@pytest.mark.parametrize('name, job',[('John', 'qa-engeenier'), ('Ivan', 'Tester')])
 @allure.feature('Post user')
 @allure.story('Post user create success')
 def test_user_create_success(name, job):
@@ -23,6 +25,8 @@ def test_user_create_success(name, job):
             assert response_json['job'] == job
 
 
+@allure.label('owner', 'Telnov')
+@allure.epic('Creat')
 @allure.feature('Post user')
 @allure.story('Post user create success without name')
 def test_user_create_success_without_name():
@@ -42,6 +46,8 @@ def test_user_create_success_without_name():
             assert response_json['job'] == job
 
 
+@allure.label('owner', 'Telnov')
+@allure.epic('Creat')
 @allure.feature('Post user')
 @allure.story('Post user create success without job')
 def test_user_create_success_without_job():
@@ -61,6 +67,8 @@ def test_user_create_success_without_job():
             assert 'job' not in response_json
 
 
+@allure.label('owner', 'Telnov')
+@allure.epic('Creat')
 @allure.feature('Post user')
 @allure.story('Post user create success without params')
 def test_user_create_success_without_params():
@@ -79,6 +87,8 @@ def test_user_create_success_without_params():
 
 
 @pytest.mark.parametrize('name, job',[('John', 'qa-engeenier'), (None, None)])
+@allure.label('owner', 'Telnov')
+@allure.epic('Creat')
 @allure.feature('Post user')
 @allure.story('Post user schema validate')
 def test_user_create_success_schema_validate(name, job):
