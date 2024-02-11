@@ -5,7 +5,7 @@ from model.utils.helper import load_json_schema, reqres_session, reqres_responce
 
 @allure.label('owner', 'Telnov')
 @allure.epic('Creat')
-@pytest.mark.parametrize('name, job',[('John', 'qa-engeenier'), ('Ivan', 'Tester')])
+@pytest.mark.parametrize('name, job',[('John', 'qa-engineer'), ('Ivan', 'Tester')])
 @allure.feature('Post user')
 @allure.story('Post user create success')
 def test_user_create_success(name, job):
